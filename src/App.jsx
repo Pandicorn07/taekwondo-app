@@ -12,7 +12,7 @@ import Exercises from "./components/Exercises";
 const App = () => {
 
   return (
-    <div>
+    <div className="app">
       <Header />
       <HyongsList />
       <Exercises />
