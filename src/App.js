@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// Import modules and React
+import React from "react";
 
-function App() {
+// Import Style of React Page
+import './sass/App.sass';
+
+// Import different components
+import Header from "./components/Header";
+import HyongsList from "./components/HyongsList";
+import Exercises from "./components/Exercises";
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <HyongsList />
+      <Exercises />
     </div>
   );
 }
