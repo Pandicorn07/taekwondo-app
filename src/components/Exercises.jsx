@@ -76,16 +76,15 @@ const Exercises = () => {
 
         console.log('The movetypes are:', moveTypes)
 
-        let moveCount = Math.floor(Math.random() * (3 - (selectedHyong.id+2)) + (selectedHyong.id+2));
+        let moveCount = Math.floor(Math.random() * (6 - (selectedHyong.id+3)) + (selectedHyong.id+3));
 
         console.log(moveCount);
 
         for (let i = 0; i < moveCount; i++) {
-            console.log(i);
-            console.log(`This would be the task at i: ${hyongExercise[i]}`);
-            setHyongExercise(item => [...item, hyongExercise[i]]);
-            console.log(hyongExercise);
+            setHyongExercise(item => [...item, moveTypes[i]]);
         }
+
+        console.log(shuffleArray(hyongExercise));
     };
 
     return (
@@ -106,7 +105,7 @@ const Exercises = () => {
                         <button type="submit">Übung erstellen</button>
                     </form>
 
-                    <ExerciseByHyong exerciseList={hyongExercise} />
+                    <ExerciseByHyong exerciseList={shuffleArray(hyongExercise)} />
                 </div>
 
 
