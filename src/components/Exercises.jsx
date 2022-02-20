@@ -81,6 +81,9 @@ const Exercises = () => {
         console.log(moveCount);
 
         for (let i = 0; i < moveCount; i++) {
+            if(moveTypes[i] === undefined) {
+                continue;
+            }
             setHyongExercise(item => [...item, moveTypes[i]]);
         }
 
