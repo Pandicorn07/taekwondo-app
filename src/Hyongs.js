@@ -183,7 +183,7 @@ const hyongs = [
     },
     {
         name: "Yung-Gun",
-        moves: 38,
+        moves: 32,
         id: 6,
         uuid: v4(),
         moveTypes: ["kwon-chon-chirugie", "doppel-yok-chung-dan-makki", "ap-chagi", "wischblock", "yop-chagi", "elbogenstoß", "sudon-chung-san-dan-makki", "fingerstich", "chung-dan-makki", "handrückenschlag", "chung-dan-makki mit elbogen",],

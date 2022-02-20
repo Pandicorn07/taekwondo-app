@@ -32,6 +32,8 @@ const HyongItem = ({hyong}) => {
         }
     }
 
+    let count = 0;
+
     return (       
         <div className="hyong-container">
             <h3>{hyong.id}. {hyong.name}</h3>
@@ -46,7 +48,8 @@ const HyongItem = ({hyong}) => {
                 {visibilityOfHyongStructure ? (
                     <div className="dropdown">
                         {hyong.moveStructure.map(move => {
-                            return <p>{move}</p>;
+                            count++;
+                            return <p><span>{count}</span>. {move}</p>;
                         })}
                     </div>
                 ) : null}

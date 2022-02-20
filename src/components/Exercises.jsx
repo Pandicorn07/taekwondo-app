@@ -95,7 +95,7 @@ const Exercises = () => {
                 <div>
                     <RandomExercise exercise={shuffleArray(exercise)} key={v4()} />
 
-                    <h2 className="generate-exercise-with-hyong">Aufgabe Generieren</h2>
+                    <h2 className="generate-exercise-with-hyong">Hyong-Übung Generieren</h2>
                     <form onSubmit={generateHyongExercise}>
                         <div className="input">
                             <label htmlFor=".hyong-input">Hyong (1...8)</label>
