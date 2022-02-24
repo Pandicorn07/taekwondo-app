@@ -3,29 +3,22 @@ import '../sass/HyongsList.sass';
 import './HyongItem';
 import HyongItem from "./HyongItem";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
-
 import hyongs from "../Hyongs";
+import FullpageHyong from "./FullpageHyong";
 
 const HyongsList = () => {
 
-    const [visibilityOfHongList, setVisibilityOfHongList] = useState(false);
-
-    
-    const toggleVisibilityOfHongList = () => {
-        if(visibilityOfHongList) {
-            setVisibilityOfHongList(!visibilityOfHongList);
-        } else {
-            setVisibilityOfHongList(!visibilityOfHongList);
-        }
-    }
+    const [activeHyong, setActiveHyong] = useState(1);
 
     return (
         <div className="hyong-list">
-            {hyongs.map(hyong => {
+            {activeHyong != null ? (
+                <div>
+                    <FullpageHyong hyong={hyongs.filter(hyongItem => hyongItem.id === activeHyong)} />
+                </div>
+            ) : hyongs.map(hyong => {
                 return (
-                    <HyongItem hyong={hyong} key={hyong.uuid} />
+                    <HyongItem hyong={hyong} key={hyong.uuid} setActiveHyong={setActiveHyong} />
                 )
             })}
         </div>
