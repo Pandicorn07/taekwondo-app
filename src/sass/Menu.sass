@@ -1,0 +1,27 @@
+@import './_design'
+
+.menu
+    position: absolute
+    bottom: 0
+    display: flex
+    height: 4rem
+    width: 100%
+    justify-content: space-between
+
+.part
+    width: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    h2
+        font-weight: 400
+
+#active
+    background-color: $main 
+    border-radius: 1rem 0 0 0
+    h2
+        font-weight: 500
+        color: $white
+
+.active-right
+    border-radius: 0 1rem 0 0 !important

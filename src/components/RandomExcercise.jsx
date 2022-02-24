@@ -8,10 +8,12 @@ import '../sass/RandomExercise.sass'
 const RandomExercise = ({exercise}) => {
 
     const [showRandomEx, setShowRandomEx] = useState(false);
+    
 
     return (
         <div className="random-exercise">
-            <button onClick={() => setShowRandomEx(true)}>Übung mit allen Bewegungen</button>
+            <h2>Übung mit allen Bewegungen</h2>
+            <button onClick={() => setShowRandomEx(true)}>Übung generieren</button>
 
             {showRandomEx ? (
                 <div>

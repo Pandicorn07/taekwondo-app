@@ -22,21 +22,12 @@ const HyongsList = () => {
     }
 
     return (
-        <div>
-            <h2 className="hyong-list-heading">Hyongs <FontAwesomeIcon icon={visibilityOfHongList ? faCaretUp : faCaretDown} onClick={toggleVisibilityOfHongList} /></h2>
-
-            {visibilityOfHongList ? (
-                <div className="hyong-list">
-                    {hyongs.map(hyong => {
-                        return (
-                            <HyongItem hyong={hyong} key={hyong.uuid} />
-                        )
-                    })}
-                </div>
-                ) : null
-            }
-
-
+        <div className="hyong-list">
+            {hyongs.map(hyong => {
+                return (
+                    <HyongItem hyong={hyong} key={hyong.uuid} />
+                )
+            })}
         </div>
     );
 };

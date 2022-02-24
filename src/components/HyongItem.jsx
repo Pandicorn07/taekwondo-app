@@ -36,13 +36,10 @@ const HyongItem = ({hyong}) => {
 
     return (       
         <div className="hyong-container">
-            <h3>{hyong.id}. {hyong.name}</h3>
-            <h4>Anzahl Bewegungen: {hyong.moves}</h4>
-            <h4>Bewegungen: {hyong.moveTypes.map(moveType => {
-                return <p>{moveType}<br /></p>;
-            })}</h4>
+            <h3>{hyong.id}</h3>
+            <p>{hyong.name}</p>
 
-            <div className="dropdown-moves">
+            {/* <div className="dropdown-moves">
                 <h4>Ablauf: <FontAwesomeIcon onClick={toggleVisibilityOfHyongStructure} icon={visibilityOfHyongStructure ? faCaretUp : faCaretDown} style={{color: colors.main}} /></h4>
 
                 {visibilityOfHyongStructure ? (
@@ -54,7 +51,7 @@ const HyongItem = ({hyong}) => {
                     </div>
                 ) : null}
 
-            </div>
+            </div> */}
         </div>
     );
 };

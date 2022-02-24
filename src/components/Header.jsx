@@ -4,7 +4,8 @@ import '../sass/Header.sass';
 const Header = () => {
     return (
         <div className="header">
-            <h1 id="heading">TECHWONDO</h1>
+            <h1 id="heading">TAEKWONDO</h1>
+            <p>Hyongs & Übungen</p>
         </div>
     );
 };

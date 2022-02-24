@@ -18,14 +18,12 @@ $text: 'Inter', sans-serif
 $code: 'Roboto Mono', sans-serif
           
 // Colors
-$main: #568FF0
-$dark-main: #2F3137
-$black-main: #191A1D
-$gray: #687088
+$main: #FF5A5A
+$light-main: #ff9665
+$gray: rgba(0, 0, 0, .7)
+$bg: #ebd6d6
 
-$green: #27FFA9
-$red: #FF0077
-$yellow: #FFCC00
+$red: $main
 
 $white: #eeeeee
 $black: #1b1b1b
@@ -34,10 +32,10 @@ $fullb: #000
 
 // Sizes
 $borderL: 1rem
-$borderS: 0.3rem
+$borderS: .7rem
 $desktopBodyPadding: 15rem
 $phoneBodyPadding: 3rem
-$padding: .5rem 1rem
+$padding: 1.3rem 1.5rem
 $transition: 150ms
 
 // Breakpoints
@@ -54,11 +52,12 @@ $desktopUHD: 3840px
   padding: 0
   box-sizing: border-box
   font-family: $text
+  color: $black
 
 body
   width: 100%
   height: 100%
-  background: $black-main
+  background: $bg
 
  
 // HTML Designs ---------------------------------------------------------------------------
@@ -83,7 +82,11 @@ button
     cursor: pointer
     height: 2rem
     transition: $transition
-    font-weight: 500
+    font-weight: 300
+    font-family: $heading
+    display: flex
+    justify-content: center
+    align-items: center
     &:hover
         background-color: darken($main, 5)
 
@@ -111,13 +114,14 @@ input
     border-radius: $borderS
     border: none
     color: $white
-    background-color: $dark-main
+    background-color: $light-main
     transition: $transition
     &:focus
         outline: none
         color: $main
     &::placeholder
-        font-family: $code
+        color: $white
+        opacity: .6
 
 h1
     font-family: $heading
@@ -125,6 +129,7 @@ h1
 
 h2
     font-family: $heading
+    font-size: 1.2rem
 
 p
     font-family: $text

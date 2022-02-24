@@ -1,9 +1,6 @@
 /* eslint-disable no-loop-func */
 import React, { useState } from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
-
 import '../sass/Excercises.sass';
 
 import moves from "../Moves";
@@ -14,7 +11,6 @@ import ExerciseByHyong from "./ExerciseByHyong";
 
 const Exercises = () => {
 
-    const [visibilityOfExercises, setVisibilityOfExercises] = useState(false);
     const [exercise, setExercise] = useState([]);
     
     const [hyongInput, setHyongInput] = useState('');
@@ -50,15 +46,6 @@ const Exercises = () => {
         console.log(shuffleArray(exercise));
     }
 
-    const toggleVisibilityOfExercises = () => {
-        setVisibilityOfExercises(!visibilityOfExercises);
-    }
-
-    const exerciseManage = () => {
-        createNewRandomExercise();
-        toggleVisibilityOfExercises();
-    }
-
     const generateHyongExercise = e => {
         e.preventDefault();
 
@@ -92,27 +79,18 @@ const Exercises = () => {
 
     return (
         <div className="excercise-container">
-            <h2 className="exercise-heading">Übungen <FontAwesomeIcon icon={visibilityOfExercises ? faCaretUp : faCaretDown} onClick={exerciseManage} /></h2>            
+            <RandomExercise exercise={shuffleArray(exercise)} exerciseManage={() => createNewRandomExercise()} key={v4()} />
 
-            {visibilityOfExercises ? (
-                <div>
-                    <RandomExercise exercise={shuffleArray(exercise)} key={v4()} />
-
-                    <h2 className="generate-exercise-with-hyong">Hyong-Übung Generieren</h2>
-                    <form onSubmit={generateHyongExercise}>
-                        <div className="input">
-                            <label htmlFor=".hyong-input">Hyong (1...8)</label>
-                            <input onChange={content => setHyongInput(content.target.value)} value={hyongInput} type="number" className="hyong-input" inputMode="number" max={8} min={1} />
-                        </div>
-                        
-                        <button type="submit">Übung erstellen</button>
-                    </form>
-
-                    <ExerciseByHyong exerciseList={shuffleArray(hyongExercise)} />
+            <h2 className="generate-exercise-with-hyong">Hyong-Übung Generieren</h2>
+            <form onSubmit={generateHyongExercise}>
+                <div className="input">
+                    <input onChange={content => setHyongInput(content.target.value)} value={hyongInput} type="number" className="hyong-input" inputMode="number" max={8} min={1} placeholder='Hyong 1 bis 8' />
                 </div>
+                
+                <button type="submit">Übung erstellen</button>
+            </form>
 
-
-            ) : null}
+            <ExerciseByHyong exerciseList={shuffleArray(hyongExercise)} />
         </div>
     );
 };
