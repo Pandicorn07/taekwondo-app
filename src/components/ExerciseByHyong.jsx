@@ -7,7 +7,7 @@ const ExerciseByHyong = ({exerciseList}) => {
 
     return (
         <div className="exercise-by-hyong">
-            <h2>Ablauf</h2>
+            {exerciseList.length === 0 ? null : <h2>Ablauf</h2>}
             {exerciseList.map(item => {
                 count++;
                 return <p><span>{count}.</span> {item}</p>

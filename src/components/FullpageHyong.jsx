@@ -2,7 +2,7 @@
 import React from 'react';
 import '../sass/FullpageHyong.sass';
 
-const FullpageHyong = ({hyong}) => {
+const FullpageHyong = ({hyong, back}) => {
 
     let hyongList = {};
 
@@ -13,10 +13,14 @@ const FullpageHyong = ({hyong}) => {
         hyongList.uuid = item.uuid;
         hyongList.moveTypes = item.moveTypes;
         hyongList.moveStructure = item.moveStructure;
-    })
+    });
+
+    let moveCount = 0;
 
     return (
         <div className='fullpage-hyong '>
+            <p className='go-back' onClick={back}>Zurück</p>
+
             <h1 id='hyongname'>{hyongList.name} <br /> <span>Hyong</span></h1>
 
             <div className="infoContainer moveCount">
@@ -31,9 +35,13 @@ const FullpageHyong = ({hyong}) => {
 
             <div className="infoContainer">
                 <h1>Ablauf</h1>
-                <ol>
-                    {hyongList.moveStructure.map(move => <li>{move}</li>)}
-                </ol>
+                <div>
+                    {hyongList.moveStructure.map(move => {
+                        moveCount++;
+                        return <p><span>{moveCount}</span> {move}</p>;
+
+                    })}
+                </div>
             </div>
         </div>
     )

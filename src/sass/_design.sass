@@ -9,6 +9,9 @@
 // Roboto Mono (Font):
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap')
 
+// Josefin Sans (Font):
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap')
+
 
 // VARIABLES ------------------------------------------------------------------------------
 
@@ -18,10 +21,10 @@ $text: 'Inter', sans-serif
 $code: 'Roboto Mono', sans-serif
           
 // Colors
-$main: #FF5A5A
+$main: #FF554A
 $light-main: #ff9665
 $gray: rgba(0, 0, 0, .7)
-$bg: #ececec
+$bg: #f2f2f2
 
 $red: $main
 
@@ -31,7 +34,7 @@ $fullw: #fff
 $fullb: #000
 
 // Sizes
-$borderL: 1rem
+$borderL: 8rem
 $borderS: .7rem
 $desktopBodyPadding: 15rem
 $phoneBodyPadding: 3rem
@@ -77,12 +80,12 @@ body
 button
     border: none
     background-color: $main
-    border-radius: $borderS
+    border-radius: $borderL
     padding: $padding
     cursor: pointer
     height: 2rem
     transition: $transition
-    font-weight: 300
+    font-weight: 500
     font-family: $heading
     display: flex
     justify-content: center
@@ -111,7 +114,7 @@ button
 input
     height: 2rem
     padding: $padding
-    border-radius: $borderS
+    border-radius: $borderL
     border: none
     color: $white
     background-color: $light-main

@@ -14,10 +14,12 @@ const App = () => {
 
   const [activeTab, setActiveTab] = useState('right');
 
+  const [title, setTitle] = useState('hyongs & übungen')
+
   return (
     <div className="app">
-      <Header />
-      {activeTab === 'left' ? <HyongsList /> : <Exercises />}
+      <Header title={title} />
+      {activeTab === 'left' ? <HyongsList setTitle={(i) => setTitle(i)} /> : <Exercises setTitle={(i) => setTitle(i)} />}
       <Menu activeTab={activeTab} setActiveTab={(tab) => setActiveTab(tab)} />
     </div>
   );

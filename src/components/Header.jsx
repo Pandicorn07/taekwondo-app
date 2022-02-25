@@ -1,11 +1,12 @@
 import React from "react";
 import '../sass/Header.sass';
+import logo from '../assets/logo.svg'
 
-const Header = () => {
+const Header = ({title}) => {
     return (
         <div className="header">
-            <h1 id="heading">TAEKWONDO</h1>
-            <p>Hyongs & Übungen</p>
+            <img src={logo} alt="" id="heading" />
+            <p>{title}</p>
         </div>
     );
 };
