@@ -1,4 +1,4 @@
-# TaekWonDo - Hyongs & Exercises
+# Taekwondo - Hyongs & Übungen
 Dieses Git-Repository enthält eine App, welche das Taekwondo umfasst, daher auch der Name TechWonDo.
 
 In dieser App kann man alle Hyongs von ersten bis zur achten nachschlagen und zu diesen auch zufällige Übungen generieren lassen. Das passiert anhand der gelisteten Bewegungstypen bei jeder Hyong.
